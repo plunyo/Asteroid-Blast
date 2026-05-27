@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://db84hbbjmnuwy"]
 
 [ext_resource type="Texture2D" uid="uid://b10ddpscit3sx" path="res://assets/PNG/Backgrounds/black.png" id="1_d5lh8"]
-[ext_resource type="PackedScene" uid="uid://bcs5epl7oytty" path="res://player.tscn" id="2_81phd"]
-[ext_resource type="PackedScene" uid="uid://btpvc2qv55fxo" path="res://camera.tscn" id="3_qtpbo"]
-[ext_resource type="Texture2D" uid="uid://bbtblt0r120cr" path="res://assets/PNG/Damage/playerShip2_damage1.png" id="4_w5eul"]
-[ext_resource type="Texture2D" uid="uid://cgduxkx51txsq" path="res://assets/PNG/Damage/playerShip2_damage2.png" id="5_b5fhv"]
-[ext_resource type="Texture2D" uid="uid://dbbg7mj8ytdcq" path="res://assets/PNG/Damage/playerShip2_damage3.png" id="6_4fhbr"]
+[ext_resource type="PackedScene" uid="uid://bcs5epl7oytty" path="res://player/player.tscn" id="2_81phd"]
+[ext_resource type="Script" uid="uid://bsix7qi82502k" path="res://enemy_manager.gd" id="2_rxlph"]
+[ext_resource type="PackedScene" uid="uid://btpvc2qv55fxo" path="res://camera/camera.tscn" id="3_qtpbo"]
 
 [node name="Space" type="Node2D" unique_id=795077612]
 
@@ -19,19 +17,23 @@ repeat_times = 10
 position = Vector2(128, 128)
 texture = ExtResource("1_d5lh8")
 
+[node name="EnemyManager" type="Node2D" parent="." unique_id=2101359790 node_paths=PackedStringArray("player")]
+script = ExtResource("2_rxlph")
+player = NodePath("../Player")
+
+[node name="SpawnTimer" type="Timer" parent="EnemyManager" unique_id=167457922]
+wait_time = 2.5
+autostart = true
+
+[node name="LevelTimer" type="Timer" parent="EnemyManager" unique_id=2062094088]
+wait_time = 45.0
+autostart = true
+
 [node name="Player" parent="." unique_id=1292487035 instance=ExtResource("2_81phd")]
 
 [node name="Camera" parent="." unique_id=2385107 node_paths=PackedStringArray("target") instance=ExtResource("3_qtpbo")]
+process_callback = 0
 target = NodePath("../Player")
 
-[node name="PlayerShip2Damage1" type="Sprite2D" parent="." unique_id=1701766238]
-modulate = Color(1, 1, 1, 0.62352943)
-texture = ExtResource("4_w5eul")
-
-[node name="PlayerShip2Damage2" type="Sprite2D" parent="." unique_id=1103578798]
-modulate = Color(1, 1, 1, 0.62352943)
-texture = ExtResource("5_b5fhv")
-
-[node name="PlayerShip2Damage3" type="Sprite2D" parent="." unique_id=1596700282]
-modulate = Color(1, 1, 1, 0.62352943)
-texture = ExtResource("6_4fhbr")
+[connection signal="timeout" from="EnemyManager/SpawnTimer" to="EnemyManager" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="EnemyManager/LevelTimer" to="EnemyManager" method="_on_level_timer_timeout"]

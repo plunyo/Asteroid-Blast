@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dhhparle4h7pw"]
+
+[ext_resource type="Script" uid="uid://qotudo6d4j6o" path="res://bullet_component/laser.gd" id="1_142lv"]
+
+[node name="Laser" type="Area2D" unique_id=449318137]
+script = ExtResource("1_142lv")
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1518266719]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c7otajdh1a3au"]
+
+[ext_resource type="PackedScene" uid="uid://bsmtyudhodomf" path="res://enemy/enemy.tscn" id="1_yle0i"]
+[ext_resource type="Texture2D" uid="uid://d4e24e1evwg71" path="res://assets/PNG/Enemies/enemyBlack1.png" id="2_4n4up"]
+
+[node name="Enemy1" unique_id=2060542553 instance=ExtResource("1_yle0i")]
+
+[node name="Sprite" parent="." index="2" unique_id=1845151349]
+texture = ExtResource("2_4n4up")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
