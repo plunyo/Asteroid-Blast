@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://db84hbbjmnuwy"]
+
+[ext_resource type="Texture2D" uid="uid://b10ddpscit3sx" path="res://assets/PNG/Backgrounds/black.png" id="1_d5lh8"]
+[ext_resource type="PackedScene" uid="uid://bcs5epl7oytty" path="res://player.tscn" id="2_81phd"]
+[ext_resource type="PackedScene" uid="uid://btpvc2qv55fxo" path="res://camera.tscn" id="3_qtpbo"]
+[ext_resource type="Texture2D" uid="uid://bbtblt0r120cr" path="res://assets/PNG/Damage/playerShip2_damage1.png" id="4_w5eul"]
+[ext_resource type="Texture2D" uid="uid://cgduxkx51txsq" path="res://assets/PNG/Damage/playerShip2_damage2.png" id="5_b5fhv"]
+[ext_resource type="Texture2D" uid="uid://dbbg7mj8ytdcq" path="res://assets/PNG/Damage/playerShip2_damage3.png" id="6_4fhbr"]
+
+[node name="Space" type="Node2D" unique_id=795077612]
+
+[node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=1420950985]
+scroll_offset = Vector2(-193, -195)
+repeat_size = Vector2(256, 256)
+autoscroll = Vector2(5, 5)
+repeat_times = 10
+
+[node name="BlackBackground" type="Sprite2D" parent="ParallaxBackground" unique_id=521800448]
+position = Vector2(128, 128)
+texture = ExtResource("1_d5lh8")
+
+[node name="Player" parent="." unique_id=1292487035 instance=ExtResource("2_81phd")]
+
+[node name="Camera" parent="." unique_id=2385107 node_paths=PackedStringArray("target") instance=ExtResource("3_qtpbo")]
+target = NodePath("../Player")
+
+[node name="PlayerShip2Damage1" type="Sprite2D" parent="." unique_id=1701766238]
+modulate = Color(1, 1, 1, 0.62352943)
+texture = ExtResource("4_w5eul")
+
+[node name="PlayerShip2Damage2" type="Sprite2D" parent="." unique_id=1103578798]
+modulate = Color(1, 1, 1, 0.62352943)
+texture = ExtResource("5_b5fhv")
+
+[node name="PlayerShip2Damage3" type="Sprite2D" parent="." unique_id=1596700282]
+modulate = Color(1, 1, 1, 0.62352943)
+texture = ExtResource("6_4fhbr")
