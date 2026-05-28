@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bghtrlnpq6w4y" path="res://bullet_component/shooting_component.gd" id="1_84klm"]
 
 [node name="ShootingComponent" type="Node" unique_id=1351911541]
+process_mode = 3
 script = ExtResource("1_84klm")
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=866847540]

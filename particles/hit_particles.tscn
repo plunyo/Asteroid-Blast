@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://crhqy8br8tj1g"]
+
+[ext_resource type="Texture2D" uid="uid://u3s13axfht6t" path="res://assets/PNG/Effects/star1.png" id="1_u448n"]
+
+[sub_resource type="Gradient" id="Gradient_2mvqj"]
+offsets = PackedFloat32Array(0.5576923, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="HitParticles" type="CPUParticles2D" unique_id=1546243448]
+emitting = false
+amount = 32
+texture = ExtResource("1_u448n")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.75
+scale_amount_max = 1.25
+color_ramp = SubResource("Gradient_2mvqj")

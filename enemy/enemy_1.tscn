@@ -2,8 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bsmtyudhodomf" path="res://enemy/enemy.tscn" id="1_yle0i"]
 [ext_resource type="Texture2D" uid="uid://d4e24e1evwg71" path="res://assets/PNG/Enemies/enemyBlack1.png" id="2_4n4up"]
+[ext_resource type="Script" uid="uid://b7g4i3ajfaw5j" path="res://enemy/enemy_1.gd" id="2_kxkx8"]
 
 [node name="Enemy1" unique_id=2060542553 instance=ExtResource("1_yle0i")]
+script = ExtResource("2_kxkx8")
+stop_threshold = 150.0
 
 [node name="Sprite" parent="." index="1" unique_id=1845151349]
 texture = ExtResource("2_4n4up")

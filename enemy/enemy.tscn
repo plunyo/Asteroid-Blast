@@ -31,6 +31,35 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/HitFlash:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ppra6"]
+resource_name = "hitflash"
+length = 0.075
+step = 0.005
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/HitFlash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.015000001, 0.075),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ofsxj"]
 resource_name = "spawn"
@@ -64,6 +93,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ppra6"]
 _data = {
 &"RESET": SubResource("Animation_2mvqj"),
+&"hitflash": SubResource("Animation_ppra6"),
 &"spawn": SubResource("Animation_ofsxj")
 }
 
@@ -82,7 +112,7 @@ clip_children = 2
 rotation = -1.5707964
 
 [node name="HitFlash" type="ColorRect" parent="Sprite" unique_id=649080164]
-visible = false
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -99,3 +129,5 @@ grow_vertical = 2
 process_mode = 3
 libraries/ = SubResource("AnimationLibrary_ppra6")
 autoplay = &"spawn"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
