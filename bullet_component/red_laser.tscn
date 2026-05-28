@@ -8,6 +8,7 @@ radius = 6.5
 height = 58.0
 
 [node name="RedLaser" unique_id=449318137 instance=ExtResource("1_l1eo6")]
+damage = 40.0
 
 [node name="Collider" parent="." index="0" unique_id=1518266719]
 position = Vector2(0, -0.5)

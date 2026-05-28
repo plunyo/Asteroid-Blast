@@ -5,7 +5,5 @@
 
 [node name="Enemy1" unique_id=2060542553 instance=ExtResource("1_yle0i")]
 
-[node name="Sprite" parent="." index="2" unique_id=1845151349]
+[node name="Sprite" parent="." index="1" unique_id=1845151349]
 texture = ExtResource("2_4n4up")
-
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

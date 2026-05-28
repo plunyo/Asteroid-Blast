@@ -1,8 +1,20 @@
 extends Area2D
-class_name Bullet
+class_name Laser
 
-@export var speed: float = 1200.0
+@export var speed: float = 1500.0
+@export var damage: float = 100.0
 @export var direction: Vector2 = Vector2.RIGHT
+
+func _ready() -> void:
+	look_in_direction()
+
+func look_in_direction() -> void:
+	global_rotation = direction.angle()
 
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		body.hit(damage)
+		queue_free()

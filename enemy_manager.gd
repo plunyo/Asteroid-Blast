@@ -1,7 +1,7 @@
 extends Node2D
 class_name EnemyManager
 
-const ENEMY_SCENE: PackedScene = preload("res://enemy/enemy.tscn")
+const ENEMY_SCENE: PackedScene = preload("res://enemy/enemy_1.tscn")
 
 signal wave_started(wave: int)
 signal wave_ended(wave: int)
@@ -14,7 +14,7 @@ signal wave_ended(wave: int)
 @export var base_max_enemies: int = 12
 @export var max_enemies_per_wave: int = 3
 
-@export var base_spawn_interval: float = 1.5
+@export var base_spawn_interval: float = 3
 @export var min_spawn_interval: float = 0.25
 @export var spawn_interval_reduction_per_wave: float = 0.08
 
