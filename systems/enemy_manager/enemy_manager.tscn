@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://kg4uevwc6802"]
+
+[ext_resource type="Script" uid="uid://bsix7qi82502k" path="res://systems/enemy_manager/enemy_manager.gd" id="1_8psle"]
+
+[node name="EnemyManager" type="Node2D" unique_id=1243249648]
+script = ExtResource("1_8psle")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1661917654]
+wait_time = 2.5
+autostart = true
+
+[node name="LevelTimer" type="Timer" parent="." unique_id=660470657]
+wait_time = 45.0
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

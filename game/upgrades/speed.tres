@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://v18rc5spqvjm"]
+
+[ext_resource type="Texture2D" uid="uid://dyvo1xbty1qb3" path="res://assets/PNG/Power-ups/powerupBlue_bolt.png" id="1_oh5aw"]
+[ext_resource type="Script" uid="uid://h666a4p7tk3h" path="res://game/upgrades/upgrade.gd" id="2_wtvov"]
+
+[resource]
+script = ExtResource("2_wtvov")
+name = "Speed"
+icon = ExtResource("1_oh5aw")
+description = "Increases the player's speed."
+type = 1
+value = 35.0
+metadata/_custom_type_script = "uid://h666a4p7tk3h"

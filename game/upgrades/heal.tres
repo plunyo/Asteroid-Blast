@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://ctu2icocap5yq"]
+
+[ext_resource type="Script" uid="uid://h666a4p7tk3h" path="res://game/upgrades/upgrade.gd" id="1_4p0iq"]
+[ext_resource type="Texture2D" uid="uid://ga0eu22k5gqm" path="res://assets/PNG/Power-ups/pill_green.png" id="1_lv5vs"]
+
+[resource]
+script = ExtResource("1_4p0iq")
+name = "Heal"
+icon = ExtResource("1_lv5vs")
+description = "Heals the player."
+type = 2
+value = 200.0
+metadata/_custom_type_script = "uid://h666a4p7tk3h"

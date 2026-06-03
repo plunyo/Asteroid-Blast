@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://dql0yltdiiibi"]
+
+[ext_resource type="Script" uid="uid://h666a4p7tk3h" path="res://game/upgrades/upgrade.gd" id="1_3g5yd"]
+[ext_resource type="Texture2D" uid="uid://cyl5pggi7nsg" path="res://assets/PNG/Power-ups/powerupBlue_star.png" id="1_a14oq"]
+
+[resource]
+script = ExtResource("1_3g5yd")
+name = "fire_rate"
+icon = ExtResource("1_a14oq")
+description = "Increases the player's rate of fire."
+value = 0.925
+metadata/_custom_type_script = "uid://h666a4p7tk3h"

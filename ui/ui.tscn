@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bihivbvopqn0"]
+
+[ext_resource type="Script" uid="uid://66me1l5mahav" path="res://ui/ui.gd" id="1_ks8t7"]
+[ext_resource type="FontFile" uid="uid://cquiqwfhn4a0" path="res://assets/Bonus/kenvector_future_thin.ttf" id="1_nb4k0"]
+
+[node name="UI" type="Control" unique_id=1673448168]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ks8t7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=663170925]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+
+[node name="VboxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=655219869]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HealthContainer" type="HBoxContainer" parent="MarginContainer/VboxContainer" unique_id=114624010]
+layout_mode = 2
+
+[node name="PlusSign" type="Label" parent="MarginContainer/VboxContainer/HealthContainer" unique_id=1355572848]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nb4k0")
+theme_override_font_sizes/font_size = 35
+text = "HP:"
+vertical_alignment = 1
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/VboxContainer/HealthContainer" unique_id=174407330]
+modulate = Color(0.24705882, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nb4k0")
+theme_override_font_sizes/font_size = 55
+text = "67"
+vertical_alignment = 1
+
+[node name="WaveContainer" type="HBoxContainer" parent="MarginContainer/VboxContainer" unique_id=1532819788]
+layout_mode = 2
+
+[node name="WaveSign" type="Label" parent="MarginContainer/VboxContainer/WaveContainer" unique_id=754537798]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nb4k0")
+theme_override_font_sizes/font_size = 30
+text = "wave:"
+vertical_alignment = 1
+
+[node name="WaveLabel" type="Label" parent="MarginContainer/VboxContainer/WaveContainer" unique_id=1600456413]
+modulate = Color(0, 0.34117648, 1, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nb4k0")
+theme_override_font_sizes/font_size = 45
+text = "67"
+vertical_alignment = 1

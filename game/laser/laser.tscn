@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dhhparle4h7pw"]
+
+[ext_resource type="Script" uid="uid://qotudo6d4j6o" path="res://game/laser/laser.gd" id="1_142lv"]
+
+[node name="Laser" type="Area2D" unique_id=449318137]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_142lv")
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1518266719]
+
+[node name="FreeTimer" type="Timer" parent="." unique_id=922399906]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="FreeTimer" to="." method="_on_free_timer_timeout"]

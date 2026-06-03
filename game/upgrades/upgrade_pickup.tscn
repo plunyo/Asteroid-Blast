@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cp3xuyafixo71"]
+
+[ext_resource type="Script" uid="uid://cyylg0yigjofv" path="res://game/upgrades/upgrade_pickup.gd" id="1_ntv8y"]
+[ext_resource type="Texture2D" uid="uid://b8bov8hqfv7mv" path="res://assets/PNG/Power-ups/powerupBlue.png" id="2_410nr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24lwk"]
+size = Vector2(32, 32)
+
+[node name="UpgradePickup" type="Area2D" unique_id=1012705955]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ntv8y")
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=192006943]
+shape = SubResource("RectangleShape2D_24lwk")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1195581958]
+texture = ExtResource("2_410nr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

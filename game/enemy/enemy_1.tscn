@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c7otajdh1a3au"]
+
+[ext_resource type="PackedScene" uid="uid://bsmtyudhodomf" path="res://game/enemy/enemy.tscn" id="1_yle0i"]
+[ext_resource type="Texture2D" uid="uid://d4e24e1evwg71" path="res://assets/PNG/Enemies/enemyBlack1.png" id="2_4n4up"]
+[ext_resource type="Script" uid="uid://b7g4i3ajfaw5j" path="res://game/enemy/enemy_1.gd" id="2_kxkx8"]
+[ext_resource type="PackedScene" uid="uid://cvxgkyxtjxtpu" path="res://game/laser/shooting_component.tscn" id="4_ucil1"]
+
+[node name="Enemy1" unique_id=2060542553 instance=ExtResource("1_yle0i")]
+script = ExtResource("2_kxkx8")
+stop_threshold = 300.0
+siphon = 60.0
+
+[node name="OnScreenNotifier" parent="." index="1" unique_id=1691967664]
+rect = Rect2(-42, -46, 84, 93)
+
+[node name="ShootingComponent" parent="." index="3" unique_id=1351911541 instance=ExtResource("4_ucil1")]
+physics_mask = 2
+
+[node name="Sprite" parent="." index="4" unique_id=1845151349]
+texture = ExtResource("2_4n4up")
